@@ -13,5 +13,3 @@ pip install -r requirements.txt
 python index.py
 
 This should start the dash app and present a 404 when you visit the local host port
-
-add /app1 or /app2 to the url pattern to visit the two pages
