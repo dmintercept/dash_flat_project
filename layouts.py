@@ -33,7 +33,7 @@ navbar = dbc.Navbar(
                 dbc.Row(
                     [
                         dbc.Col(html.Img(src=LOGO, height="30px")),
-                        dbc.Col(dbc.NavbarBrand("TokenSets Tracker", className="ml-2 strong", href='/Home')),
+                        dbc.Col(dbc.NavbarBrand("TokenSets Tracker", className="ml-auto strong", href='/Home')),
                     ],
                     align="center",
                     no_gutters=True,
@@ -43,7 +43,7 @@ navbar = dbc.Navbar(
             dbc.NavbarToggler(id="navbar-toggler"),
             dbc.Collapse(
                 dbc.Nav(
-                    [make_nav_item(x,x,'\\'+x) for x in DIRECTORY], className="ml-auto", navbar=True
+                    [make_nav_item(x,x,'\\'+x) for x in DIRECTORY], className="ml-auto strong", navbar=True
                 ),
                 id="navbar-collapse",
                 navbar=True,
