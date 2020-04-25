@@ -33,7 +33,7 @@ navbar = dbc.Navbar(
                 dbc.Row(
                     [
                         dbc.Col(html.Img(src=LOGO, height="30px")),
-                        dbc.Col(dbc.NavbarBrand("TokenSets Tracker", className="ml-2 strong")),
+                        dbc.Col(dbc.NavbarBrand("TokenSets Tracker", className="ml-2 strong", href='/Home')),
                     ],
                     align="center",
                     no_gutters=True,
