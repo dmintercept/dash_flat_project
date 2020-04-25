@@ -5,7 +5,7 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 
 from app import app
-from layouts import layout1, layout2, home_page, navbar, page_not_found
+from layouts import home_page, navbar, page_not_found
 import callbacks
 
 from layouts import DIRECTORY
@@ -18,14 +18,13 @@ app.layout = html.Div([
 
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def render_page_content(pathname):
-    if pathname in ["/"]:
-        return home_page
-    elif pathname in ["/Home"]:
-        return home_page
-    elif pathname in ["/Backtest"]:
-        return html.H1('Backtest')
-    # If the user tries to reach a different page, return a 404 message
-    return page_not_found(pathname)
+    if pathname == "/":
+        # Treat page 1 as the homepage / index
+        return DIRECTORY['Home']
+    elif f"{pathname}"[1:] in DIRECTORY:
+        return DIRECTORY[ f"{pathname}"[1:]]
+    else:
+        return page_not_found(pathname)
 
 if __name__ == '__main__':
     app.run_server(debug=True)

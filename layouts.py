@@ -6,21 +6,20 @@ import dash_bootstrap_components as dbc
 
 LOGO = ""
 
-DIRECTORY = ['Home','Backtest']
-
-layout1 = html.Div([
-    html.H3('App 1'),
-])
-
-layout2 = html.Div([
-    html.H3('App 2'),
-])
 
 home_page = html.Div(
     [
         html.H1('Home Page'),
     ]
 )
+
+page_2 = html.Div(
+    [
+        html.H1('Page 2')
+    ]
+)
+
+DIRECTORY = {"Home": home_page, "Test":page_2}
 
 def make_nav_item(comp_id, name, href):
     return dbc.NavItem(children=dbc.NavLink(id=comp_id,children=name,href=href))
@@ -33,7 +32,7 @@ navbar = dbc.Navbar(
                 dbc.Row(
                     [
                         dbc.Col(html.Img(src=LOGO, height="30px")),
-                        dbc.Col(dbc.NavbarBrand("TokenSets Tracker", className="ml-auto strong", href='/Home')),
+                        dbc.Col(dbc.NavbarBrand("Project Title", className="ml-auto strong", href='/Home')),
                     ],
                     align="center",
                     no_gutters=True,
