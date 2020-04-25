@@ -3,28 +3,24 @@ import dash_html_components as html
 
 import dash_bootstrap_components as dbc
 
+
+LOGO = ""
+
+DIRECTORY = ['Home','Backtest']
+
 layout1 = html.Div([
     html.H3('App 1'),
-    dcc.Link('Go to App 2', href='/app2')
 ])
 
 layout2 = html.Div([
     html.H3('App 2'),
-    dcc.Link('Go to App 1', href='/app1')
 ])
 
 home_page = html.Div(
     [
         html.H1('Home Page'),
-        dcc.Link('Go to App 1',href = '/app1'),
-        dcc.Link('Go to App 2', href = '/app2')
     ]
 )
-
-LOGO = ""
-
-DIRECTORY = ['Home','RSI','Subscribe','Trader Sentiment','Contact']
-
 
 def make_nav_item(comp_id, name, href):
     return dbc.NavItem(children=dbc.NavLink(id=comp_id,children=name,href=href))
