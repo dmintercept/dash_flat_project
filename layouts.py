@@ -54,3 +54,12 @@ navbar = dbc.Navbar(
     dark=True,
     className="mb-5",
 )
+
+def page_not_found(pathname):
+    return dbc.Jumbotron(
+        [
+            html.H1("404: Not found", className="text-danger"),
+            html.Hr(),
+            html.P(f"The pathname {pathname} was not recognised..."),
+        ]
+    )

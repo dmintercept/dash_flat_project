@@ -5,7 +5,7 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 
 from app import app
-from layouts import layout1, layout2, home_page, navbar
+from layouts import layout1, layout2, home_page, navbar, page_not_found
 import callbacks
 
 from layouts import DIRECTORY
@@ -25,13 +25,7 @@ def render_page_content(pathname):
     elif pathname in ["/Backtest"]:
         return html.H1('Backtest')
     # If the user tries to reach a different page, return a 404 message
-    return dbc.Jumbotron(
-        [
-            html.H1("404: Not found", className="text-danger"),
-            html.Hr(),
-            html.P(f"The pathname {pathname} was not recognised..."),
-        ]
-    )
+    return page_not_found(pathname)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
